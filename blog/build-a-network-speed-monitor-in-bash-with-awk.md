@@ -1,14 +1,14 @@
 # Build a network speed monitor in bash with AWK
 
-Sometimes we need to measure the network speed of a server but some services like `speedtest` are not useful because we want to check our bandwidth with another cloud service and not the internet itself.
+Sometimes we need to measure the network speed of a server, but services like `speedtest` are not useful because we want to check our bandwidth against another cloud service and not the internet itself.
 
 ## AWK to the rescue
 
-We can write a simple script in AWK to parse the `/proc/net/dev` pseudo-file which contains network device status information. AWK is a [programming language](https://dev.to/rrampage/awk---a-useful-little-language-2fhf) for manipulating columns of data that we can't solve with a simple `sed` command and a regex.
+We can write a simple script in AWK to parse the `/proc/net/dev` pseudo-file which contains network device status information. AWK is a [programming language](https://dev.to/rrampage/awk---a-useful-little-language-2fhf) to manipulate columns of data that we can't solve with a simple `sed` command and a regex.
 
-But before talk about the AWK script, we should define the sentences in bash that we need in this script. Or, you can jump to the end to find the complete script 😁.
+But before talking about the AWK script, we should define the sentences in bash that we need in this script. Or, you can jump to the end to find the complete script 😁.
 
-## The bash part
+## The bash side
 
 We need to create a `.sh` file with an infinite loop to print the network speed every 2 seconds.
 
@@ -22,15 +22,15 @@ do
 done
 ```
 
-First, we save the name of network interface to inspect in a `INTERFACE` variable, in this example is `eth0`.
+First, we declare the variable `INTERFACE` with the name of the network interface to be inspected - in this example is `eth0`.
 
-Second, we print a nice header to remember us which column is the download speed (and the upload one) and the speeds are measured in kilobytes per second (KiB/s, the `i` is because [1 Kibibyte is 1024 bytes](https://en.wikipedia.org/wiki/Byte#Units_based_on_powers_of_2)).
+Then, we print a nice header to remind ourselves which column is the download speed (and the upload one). These speeds are measured in kilobytes per second (KiB/s, the `i` is because [1 Kibibyte is 1024 bytes](https://en.wikipedia.org/wiki/Byte#Units_based_on_powers_of_2)).
 
-Then, we start the infinite loop with a sleep of 2 seconds between every iteration. Don't worry, this script will be stopped using `Ctrl+C`.
+Finally, we start the infinite loop with a sleep of 2 seconds between iterations. Don't worry, this script can be stopped using `Ctrl+C`.
 
 ### Comparing the dev pseudo-file in time
 
-We want to measure the network speed in KiB per second, so we should read the `/proc/net/dev` file and compare with a new read from the dev file after 1 second. For this we can use a little bash trick called [process substitution](https://tldp.org/LDP/abs/html/process-sub.html).
+We want to measure the network speed in KiB per second, so we should read the `/proc/net/dev` file and compare it against a new read from the same file after 1 second. For this, we can use a little bash trick called [process substitution](https://tldp.org/LDP/abs/html/process-sub.html).
 
 ```bash
 awk '...' \
@@ -38,7 +38,7 @@ awk '...' \
   <(sleep 1; grep $INTERFACE /proc/net/dev)
 ```
 
-We use `grep` to read the line of our interface, and after wait for 1 second we must read the line of our interface again.
+We use `grep` to read the line of our interface, and after waiting for 1 second we must read the line of our interface again.
 
 ![Mr. Bean magic](https://dev-to-uploads.s3.amazonaws.com/i/mmadhlrajvdl2ed1m64l.jpg)
 
@@ -52,7 +52,7 @@ cat /proc/net/dev
 
 We'll see that the 1st column is the interface name, the 2nd column is the received bytes (`rx`) and the 10th column is the transmitted bytes (`tx`).
 
-We should save the first read in the `rx` and `tx` variables, and then `print` the difference of the 2nd read with the first one. But, we could divide the result by 1024 because KiB/s is a better human readable format than B/s.
+We should save the first read in the `rx` and `tx` variables, and then `print` the difference between the 2nd read and the first one. But, we could divide the result by 1024 because KiB/s is a better human readable format than B/s.
 
 ```awk
 {
