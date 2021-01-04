@@ -64,7 +64,7 @@ We should save the first read in the `rx` and `tx` variables, and then `print` t
 }
 ```
 
-We can see this output from this:
+We can see its output by running:
 
 ```bash
 $ ./net-monitor.sh
@@ -74,7 +74,7 @@ eth0  down (KiB/s)   up (KiB/s)
   1132.12    70.1748
 ```
 
-If we want to round the decimal part we can use the `printf` function for that.
+If we want to round the decimal part we can use the `printf` function.
 
 ```awk
 {
@@ -107,4 +107,4 @@ do
 done
 ```
 
-And it's ready! Just open a terminal and run the script to monitor the network speed while you run your network process.
+And it's ready! Just open a terminal and run the script to monitor the network speed while you're running your network process.
