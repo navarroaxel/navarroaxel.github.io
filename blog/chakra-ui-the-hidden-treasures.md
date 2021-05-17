@@ -22,7 +22,7 @@ But this post is not an introduction...
 
 ## And where is the treasure?
 
-Like every treasure, this one is not in the surface and you'll need to go deep. I cloned the source code of Chakra UI and I found a lot of stuff.
+Like every treasure, this one is not in the surface, you'll need to go deeper. I cloned the source code of Chakra UI and I found a lot of stuff.
 
 ### The project structure
 
@@ -32,11 +32,11 @@ Chakra is built using packages for each module 👌; some are internals and othe
 
 The first package I dove into was the [@chakra-ui/hooks](https://github.com/chakra-ui/chakra-ui/tree/main/packages/hooks) and I found the first treasure:
 
-The [useOutsideClick](https://chakra-ui.com/docs/hooks/use-outside-click) is a common one to hide popovers when the user clicks outside them. And then there is the [useMergeRefs](https://chakra-ui.com/docs/hooks/use-merge-refs) when you need to merge several react refs into one. I contributed with doc pages for both hooks. 😁
+The [useOutsideClick](https://chakra-ui.com/docs/hooks/use-outside-click) is a common one to hide popovers when the user clicks outside them. And then there is the [useMergeRefs](https://chakra-ui.com/docs/hooks/use-merge-refs) when you need to merge several React refs into one. I contributed with doc pages for both hooks. 😁
 
 You can find more [useful](https://github.com/chakra-ui/chakra-ui/blob/main/packages/hooks/src/use-const.ts) [hooks](https://github.com/chakra-ui/chakra-ui/blob/main/packages/hooks/src/use-why-update.ts).
 
-Like this special one: the [usePopper](https://github.com/chakra-ui/chakra-ui/blob/main/packages/popper/README.md), a wrapper for the [popper.js](https://popper.js.org/) 🍿 library, converting it into a magic hook. This is an internal hook and it's not documented in the website, but is still exported and you can use it, but ⚠️ it's not covered by [semver](https://semver.org/). 🙀
+Like this special one: the [usePopper](https://github.com/chakra-ui/chakra-ui/blob/main/packages/popper/README.md), a wrapper for the [popper.js](https://popper.js.org/) 🍿 library, converting it into a magic hook. This is an internal hook and it's not documented in the website, but is still exported and you can use it, the downside is that ⚠️ it's not covered by [semver](https://semver.org/). 🙀
 
 ### The utils
 
@@ -64,7 +64,7 @@ const MyNiceFeature = () => {
 };
 ```
 
-If this helpers are already loaded in your bundle, what if you don't repeat the code and you reuse this in your React app code.
+If these helpers are already loaded in your bundle, why would you repeat the code instead of reusing it?
 
 ### The React code
 
@@ -83,5 +83,6 @@ Cons
 
 * Some tweaks that you'll need to customize the theme is not explicitly documented.
 * The community is growing but not so big like `styled-components.
+* The documentation is a work in progress, there are some functionalities that you'll have to understand by reading the source code.
 
 I hope you fall in love with Chakra UI too and the power of the Open Source Software. 🥰 *#ShareTheKnowledge*
