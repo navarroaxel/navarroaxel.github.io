@@ -83,6 +83,6 @@ Cons
 
 * Some tweaks that you'll need to customize the theme is not explicitly documented.
 * The community is growing but not so big like `styled-components.
-* The documentation is a work in progress, there are some functionalities that you'll have to understand by reading the source code.
+* The documentation is a work in progress, there are some advanced functionalities that you'll have to understand by reading the source code.
 
 I hope you fall in love with Chakra UI too and the power of the Open Source Software. 🥰 *#ShareTheKnowledge*
