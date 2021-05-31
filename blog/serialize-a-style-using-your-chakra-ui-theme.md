@@ -1,8 +1,8 @@
 # Serialize a style using your Chakra UI theme
 
-A time ago I had to build a subscription form using the [Spreedly iFrame API](https://docs.spreedly.com/reference/iframe/v1/) to allow the user to use their credit card in a safe way.
+A time ago I had to build a _subscription form_ using the [Spreedly iFrame API](https://docs.spreedly.com/reference/iframe/v1/) to allow a user to use its credit card in a safe way.
 
-And I found myself in an issue with the input for the card number and the CVV number because Spreedly inserts an `iframe` and the inputs are not under my control (and my CSS).
+After a while, I found myself into an issue with the card number and the CVV number inputs because Spreedly inserts an `iframe` and the inputs are not under my control (and my CSS).
 
 ## The easy solution
 
@@ -42,9 +42,9 @@ const MyComp = () => {
 };
 ```
 
-This is similar to `styled-components` using the string templates for create styles.
+This is similar to `styled-components` using the string templates to create styles.
 
-💡 Tip: remember that your component should be wrapper by a `ChakraProvider` to get the `theme` object.
+💡 Tip: remember that your component should be wrapped by a `ChakraProvider` to get the `theme` object.
 
 ## Using a CSS object
 
@@ -59,9 +59,9 @@ const toCSSString = (styles, theme) => serializeStyles([css(styles)(theme)]).sty
 
 the [`serializeStyles` function](https://github.com/emotion-js/emotion/blob/main/packages/serialize/) from `emotion` convert an object into another one built with a `name` attribute for a auto-generated CSS class name; and the `styles` attribute with all the style properties in one string. 😁
 
-the [`css` function](https://github.com/chakra-ui/chakra-ui/blob/main/packages/styled-system/src/css.ts) from Chakra UI normalize the shortcuts that [Chakra provides](https://chakra-ui.com/docs/features/style-props) like:
+the [`css` function](https://github.com/chakra-ui/chakra-ui/blob/main/packages/styled-system/src/css.ts) from Chakra UI normalizes the shortcuts that [Chakra provides](https://chakra-ui.com/docs/features/style-props) like:
 
-```
+```javascript
 <Box w="full" h={9} bg="blue.300"/>
 ```
 
@@ -79,7 +79,7 @@ We can't use nice values like `9`, `full` or `blue.300` because Spreedly is insi
 
 ### Building the inline styles from an object
 
-We are going to put all together to get final theme values, not the custom properties, and serialize the CSS object into a inline style string using `emotion`.
+We are going to put them all together to get the final theme values (not the custom properties) and serialize the CSS object into a inline style string using `emotion`.
 
 ```javascript
 import {css, useTheme} from "@chakra-ui/react"
