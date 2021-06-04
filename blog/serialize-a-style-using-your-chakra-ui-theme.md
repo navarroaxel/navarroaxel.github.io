@@ -57,7 +57,7 @@ import {serializeStyles} from '@emotion/serialize'
 const toCSSString = (styles, theme) => serializeStyles([css(styles)(theme)]).styles;
 ```
 
-the [`serializeStyles` function](https://github.com/emotion-js/emotion/blob/main/packages/serialize/) from `emotion` convert an object into another one built with a `name` attribute for a auto-generated CSS class name; and the `styles` attribute with all the style properties in one string. 😁
+The [`serializeStyles` function](https://github.com/emotion-js/emotion/blob/main/packages/serialize/) from `emotion` convert an object into another one built with a `name` attribute for an auto-generated CSS class name; and the `styles` attribute with all the style properties in one string. 😁
 
 The [`css` function](https://github.com/chakra-ui/chakra-ui/blob/main/packages/styled-system/src/css.ts) from Chakra UI normalizes the shortcuts that [Chakra provides](https://chakra-ui.com/docs/features/style-props) like:
 
