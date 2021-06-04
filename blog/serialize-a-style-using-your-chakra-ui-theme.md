@@ -2,7 +2,7 @@
 
 A time ago I had to build a _subscription form_ using the [Spreedly iFrame API](https://docs.spreedly.com/reference/iframe/v1/) to allow a user to use its credit card in a safe way.
 
-After a while, I found myself into an issue with the card number and the CVV number inputs because Spreedly inserts an `iframe` and the inputs are not under my control (and my CSS).
+After a while, I found myself into an issue with the card number and the CVV number inputs because Spreedly inserts an `iframe`; therefore the inputs are not under my control (and my CSS).
 
 ## The easy solution
 
@@ -18,7 +18,7 @@ This is a little bit ugly but it's a solution after all. Let's see how to improv
 
 ## Using the theme with strings
 
-We can use the [`useTheme` hook](https://chakra-ui.com/docs/hooks/use-theme) to get all the tokens we had defined in the theme.
+We can use the [`useTheme` hook](https://chakra-ui.com/docs/hooks/use-theme) to get all the tokens we defined in the theme.
 
 ```javascript
 import {useEffect} from 'react'
