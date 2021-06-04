@@ -6,7 +6,7 @@ After a while, I found myself into an issue with the card number and the CVV num
 
 ## The easy solution
 
-Afortunately Spreedly accepts a style inline string via the [`setStyle`](https://docs.spreedly.com/reference/iframe/v1/#setstyle) function.
+Fortunately, Spreedly accepts a style inline string via the [`setStyle`](https://docs.spreedly.com/reference/iframe/v1/#setstyle) function.
 
 ```javascript
 Spreedly.on("ready", () => {
@@ -14,7 +14,7 @@ Spreedly.on("ready", () => {
 });
 ```
 
-A little ugly but a solution at least. Lets see how to improve this...
+This is a little bit ugly but it's a solution after all. Let's see how to improve this...
 
 ## Using the theme with strings
 
@@ -42,13 +42,13 @@ const MyComp = () => {
 };
 ```
 
-This is similar to `styled-components` using the string templates to create styles.
+This is similar to `styled-components` because of the string templates usage to create styles.
 
 💡 Tip: remember that your component should be wrapped by a `ChakraProvider` to get the `theme` object.
 
 ## Using a CSS object
 
-I looked for a nicer way to handle a CSS object in JavaScript instead of a one big string. Chakra UI uses [emotion](https://emotion.sh/) under the hook to build the CSS classes, so I found this solution:
+I looked for a nicer way to handle a CSS object in JavaScript instead of using one big string. Chakra UI uses [emotion](https://emotion.sh/) under the hook to build the CSS classes, so I found this solution:
 
 ```javascript
 import {css} from "@chakra-ui/react"
@@ -59,7 +59,7 @@ const toCSSString = (styles, theme) => serializeStyles([css(styles)(theme)]).sty
 
 the [`serializeStyles` function](https://github.com/emotion-js/emotion/blob/main/packages/serialize/) from `emotion` convert an object into another one built with a `name` attribute for a auto-generated CSS class name; and the `styles` attribute with all the style properties in one string. 😁
 
-the [`css` function](https://github.com/chakra-ui/chakra-ui/blob/main/packages/styled-system/src/css.ts) from Chakra UI normalizes the shortcuts that [Chakra provides](https://chakra-ui.com/docs/features/style-props) like:
+The [`css` function](https://github.com/chakra-ui/chakra-ui/blob/main/packages/styled-system/src/css.ts) from Chakra UI normalizes the shortcuts that [Chakra provides](https://chakra-ui.com/docs/features/style-props) like:
 
 ```javascript
 <Box w="full" h={9} bg="blue.300"/>
@@ -75,7 +75,7 @@ The `w`, `h` and `bg` are aliases for `width`, `height` and `background` style p
 }
 ```
 
-We can't use nice values like `9`, `full` or `blue.300` because Spreedly is inside an `iframe` and our CSS [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) (a.k.a. CSS variables) are not in the scope of the `iframe`'s stylesheet.
+Here we can't use nice values like `9`, `full` or `blue.300` because Spreedly is inside an `iframe` and our CSS [custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) (a.k.a. CSS variables) are not in the scope of the `iframe`'s stylesheet.
 
 ### Building the inline styles from an object
 
@@ -110,4 +110,4 @@ const MyComp = () => {
 
 ## Conclusion
 
-I hope these internals functions from Chakra UI and emotion help you using Spreedly, an iframe, or a UI component where we can't send the styles in the cool way that Chakra provides.
+I hope these internals functions from Chakra UI and emotion help you when using Spreedly, an iframe, or a UI component where you can't send the styles in the cool way that Chakra provides.
