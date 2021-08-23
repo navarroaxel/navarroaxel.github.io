@@ -118,4 +118,4 @@ Ok, this looks really easy. 🤔 We take the attribute values each time the `ren
 
 Now we can create a modern and light website using just HTML and JavaScript, but plugging in complex UI stuff made with React using the Custom Element interface, or third party React packages if we need one. We are using the best of both worlds. 🎸
 
-Here you have a guide about [Custom Element Best Practices](https://developers.google.com/web/fundamentals/web-components/best-practices) from Google.
+Here you have a guide about [Custom Element Best Practices](https://developers.google.com/web/fundamentals/web-components/best-practices) from Google; and the full example [here](https://github.com/navarroaxel/howto-connect-react-custom-element).
