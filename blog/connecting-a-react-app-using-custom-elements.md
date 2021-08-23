@@ -1,6 +1,6 @@
 # Connecting a react app using custom elements
 
-The React documentation says that React and web components are [complementary to each other](https://reactjs.org/docs/web-components.html). We're going to wrap a React component into a custom element, sending some props as HTML attributes and listen the `click` event.
+The React documentation says that React and web components are [complementary to each other](https://reactjs.org/docs/web-components.html). We're going to wrap a React component into a custom element, sending some props as HTML attributes and listen to the `click` event.
 
 I'll assume you know about React and you only want to know how to use custom elements.
 
@@ -41,7 +41,7 @@ We're going to test some React features like `children`, a prop, and a date cons
 
 ## Defining a class for the element
 
-We should create a `ShadowRoot` for our React component to encapsulate the JavaScript and CSS for this component from the global CSS, it's not required, but it's recommended.
+We should create a `ShadowRoot` for our React component to encapsulate the JavaScript and CSS for this component from the global CSS, this isn't required but it's recommended.
 
 Also, it's good to separate the constructor from the render of the element itself.
 
@@ -85,7 +85,7 @@ The `slot` element is a placeholder inside a web component where you can fill yo
 
 ### The custom element lifecycle
 
-Like the React components, we can define specific method inside the custom element class to handle the lifecycle, similar to the old fashion class component in React. We're going to see the most important two.
+Like the React components, we can define specific methods inside the custom element class to handle the lifecycle, similar to the old fashion class component in React. We're going to see the most important two.
 
 ### Unmount a custom element
 
@@ -95,7 +95,7 @@ We can use `disconnectedCallback` to known when our component is disconnected fr
 
 We should re-render 🙀 our React component if we receive new values for our custom element. We have the `attributeChangedCallback` to let us know when some value changes.
 
-First, we should define an array of observable attributes for our component, and then we can render the custom element again.
+First, we should define an array of observable attributes for our component, and then we can re-render the custom element.
 
 ```javascript
 class MyElement extends HTMLElement {
@@ -112,10 +112,10 @@ class MyElement extends HTMLElement {
 }
 ```
 
-Ok, this looks really easy. 🤔 We takes the attribute values each time the `renderElement` is called, so we just need to call it, and the `ReactDOM.render()` API is going to re-render our component and calculate the diffs. 🍰
+Ok, this looks really easy. 🤔 We take the attribute values each time the `renderElement` is called, so we just need to call it, and the `ReactDOM.render()` API is going to re-render our component and calculate the diffs. 🍰
 
 ## Conclusion
 
 Now we can create a modern and light website using just HTML and JavaScript, but plugging in complex UI stuff made with React using the Custom Element interface, or third party React packages if we need one. We are using the best of both worlds. 🎸
 
-I left you a guide about [Custom Element Best Practices](https://developers.google.com/web/fundamentals/web-components/best-practices).
+Here you have a guide about [Custom Element Best Practices](https://developers.google.com/web/fundamentals/web-components/best-practices) from Google.
