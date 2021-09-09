@@ -71,7 +71,7 @@ $ pnpm -v
 
 At the moment, the official Node.js images in Docker comes with `npm` and `yarn` preinstalled, but this may change in the near future. (no more `npm` and `yarn` preinstalled in the Docker image is possible! 🤯)
 
-Previously, if you use `pnpm` in a Dockerfile you need to install it using `npm` or `curl`:
+If you use `pnpm` in Docker you need to install it using `npm` or `curl`:
 
 ```bash
 RUN npm install -g pnpm && pnpm install
