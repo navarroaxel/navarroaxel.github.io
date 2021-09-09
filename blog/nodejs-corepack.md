@@ -91,6 +91,6 @@ RUN corepack prepare npm@6.14.15 --activate && corepack npm ci
 
 ## Conclusion
 
-With Corepack we can have more control about which package manager we're using and we don't need to check if Node.js upgrades `npm` and we don't notice. If that happens we'll realize of it just when our application is on fire. 🔥
+With Corepack we can have more control about which package manager we're using and we don't need to check if Node.js upgrades `npm` and we don't notice. Well, because if that happens, by the time we realize that our application is on fire. 🔥
 
 Also, `npm` is part of GitHub Inc. and it's not part of the Node.js governance, so it's a good decision if the Node.js project becomes agnostic and as developers we can use the package manager that we need without wasting space in our Docker images on packagers that we won't use.
