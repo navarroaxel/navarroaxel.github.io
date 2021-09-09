@@ -1,10 +1,10 @@
 # Corepack: the Node.js' manager of package managers
 
-Corepack is the new built-in tool for preparing the required package manager for our projects. We're going to see what comes with this new package for packagers. 📦
+Corepack is the new built-in tool for preparing the required package manager for our projects. Let's see what comes with this new package for packagers. 📦
 
 ## Installation
 
-We're in track to get the new Node.js LTS v16 at the end of October, without a fancy name assigned yet, and we're getting [Corepack](https://github.com/nodejs/corepack) preinstalled in the default Node.js configuration since [v16.9.0](https://github.com/nodejs/node/releases/tag/v16.9.0). 👌
+The new Node.js LTS v16 will be released at the end of October (without a fancy name assigned yet), it'll have [Corepack](https://github.com/nodejs/corepack) preinstalled in the default configuration since [v16.9.0](https://github.com/nodejs/node/releases/tag/v16.9.0). 👌
 
 If we want to use this tool with previous versions we just need to install it as a global package:
 
@@ -12,7 +12,7 @@ If we want to use this tool with previous versions we just need to install it as
 $ npm install -g corepack
 ```
 
-🧠 Remember that, until now, Corepack v0.9.0 was only supporting `pnpm`, `npm` and `yarn`.
+🧠 Remember that for now Corepack v0.9.0 only supports `pnpm`, `npm` and `yarn`.
 
 ## Basic usage
 
@@ -22,7 +22,7 @@ We can use the same package manager that we always use in any machine without wo
 $ corepack pnpm install
 ```
 
-Corepack will take care of that the required manager is ready to process your request.
+Corepack will see to it that the required manager is ready to process your request.
 
 ### Specific versions
 
@@ -60,7 +60,7 @@ Corepack will install the handlers in the node directory because it's in the `$P
 corepack enable --install-directory path/to/bins_folder
 ```
 
-And, it's done you can use `pnpm` or `yarn` directly:
+And it's done, you can use `pnpm` or `yarn` directly:
 
 ```bash
 $ pnpm -v
@@ -69,7 +69,7 @@ $ pnpm -v
 
 ## Docker images
 
-At the moment, the official Node.js images in Docker comes with `npm` and `yarn` preinstalled, but this may change in a near future. (no more `npm` and `yarn` preinstalled in the Docker image is possible! 🤯)
+At the moment, the official Node.js images in Docker comes with `npm` and `yarn` preinstalled, but this may change in the near future. (no more `npm` and `yarn` preinstalled in the Docker image is possible! 🤯)
 
 Previously, if you use `pnpm` in a Dockerfile you need to install it using `npm` or `curl`:
 
@@ -77,7 +77,7 @@ Previously, if you use `pnpm` in a Dockerfile you need to install it using `npm`
 RUN npm install -g pnpm && pnpm install
 ```
 
-Now, Corepack is here to make this easier to you:
+Now Corepack is here to make this easier for you:
 
 ```bash
 RUN corepack pnpm install
@@ -91,6 +91,6 @@ RUN corepack prepare npm@6.14.15 --activate && corepack npm ci
 
 ## Conclusion
 
-With Corepack we can have more control about which package manager we're using and we don't need to check if Node.js upgrades `npm` and we don't notice. Because, if that happens, until we realize that our application is on fire. 🔥
+With Corepack we can have more control about which package manager we're using and we don't need to check if Node.js upgrades `npm` and we don't notice. If that happens we'll realize of it just when our application is on fire. 🔥
 
-Also, `npm` is part of GitHub, Inc. and it's not part of the Node.js governance, so it's a good decision if the Node.js project becomes agnostic and as developers we can use the package manager that we need without wasting space in our Docker images for packagers that we won't use.
+Also, `npm` is part of GitHub Inc. and it's not part of the Node.js governance, so it's a good decision if the Node.js project becomes agnostic and as developers we can use the package manager that we need without wasting space in our Docker images on packagers that we won't use.
