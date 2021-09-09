@@ -16,7 +16,7 @@ $ npm install -g corepack
 
 ## Basic usage
 
-We can use the same package manager that we always use in any machine without worring if it's installed or not, using:
+We can use the same package manager that we've always use in any machine without worrying if it's installed or not, using:
 
 ```bash
 $ corepack pnpm install
