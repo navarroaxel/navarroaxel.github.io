@@ -28,7 +28,7 @@ If you can't upgrade the signature algorithm on your remote servers but you stil
 ssh -oHostKeyAlgorithms=+ssh-rsa user@host
 ```
 
-### Using the week signature with Git
+### Using the weak signature with Git
 
 Right now, Bitbucket uses this weak signature algorithm, I guess you need to use your Git repositories hosted there. 🥺 You can check your connection with the following command:
 
