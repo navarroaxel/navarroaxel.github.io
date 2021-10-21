@@ -2,11 +2,11 @@
 
 I'll explain how to create an experiment in the Google Optimize (GO) panel to get a simple boolean flag in our JavaScript code, specifically using Reactjs, to display the original version of our web, or the experiment.
 
-I won't make the focus in how to create an experiments or specific configurations. I'll center this post in how to connect GO with JavaScript code.
+I won't focus on how to create experiments or specific configurations. I'll center this post on how to connect GO with JavaScript code.
 
 ## Introduction
 
-I needed to integrate Google Optimize to make an A/B testing in a project I'm working on. I found that GO was made for end users that them can make little changes (text, CSS styles, etc.) in the website without need a developer.
+I needed to integrate Google Optimize to do an A/B testing in a project I'm working on. I found that GO was made for end users so that they can make little changes (text, CSS styles, etc.) in the website without needing a developer.
 
 But I couldn't find a good guide about how to receive a `bool` flag in the frontend to develop a basic `if` in JavaScript.
 
