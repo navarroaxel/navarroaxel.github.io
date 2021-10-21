@@ -6,7 +6,7 @@ I won't focus on how to create experiments or specific configurations. I'll cent
 
 ## Introduction
 
-I needed to integrate Google Optimize to do an A/B testing in a project I'm working on. I found that GO was made for end users so that they can make little changes (text, CSS styles, etc.) in the website without needing a developer.
+I needed to integrate Google Optimize to do an [A/B testing](https://en.wikipedia.org/wiki/A/B_testing) in a project I'm working on. I found that GO was made for end users so that they can make little changes (text, CSS styles, etc.) in the website without needing a developer.
 
 But I couldn't find a good guide about how to receive a `bool` flag in the frontend to develop a basic `if` in JavaScript.
 
