@@ -2,17 +2,17 @@
 
 I'll explain how to create an experiment in the Google Optimize (GO) panel to get a simple boolean flag in our JavaScript code, specifically using Reactjs, to display the original version of our web, or the experiment.
 
-I won't focus on how to create experiments or specific configurations. I'll center this post on how to connect GO with JavaScript code.
+I won't focus on the creation of  experiments or specific configurations. This post will be centered on how to connect GO with JavaScript code.
 
 ## Introduction
 
-I needed to integrate Google Optimize to do an [A/B testing](https://en.wikipedia.org/wiki/A/B_testing) in a project I'm working on. I found that GO was made for end users so that they can make little changes (text, CSS styles, etc.) in the website without needing a developer.
+I needed to integrate Google Optimize to do an [A/B testing](https://en.wikipedia.org/wiki/A/B_testing) in a project I'm working on. I've found that GO was made for end users so that they can make little changes (text, CSS styles, etc.) in the website without needing a developer.
 
 But I couldn't find a good guide about how to receive a `bool` flag in the frontend to develop a basic `if` in JavaScript.
 
 ## The Optimize panel
 
-### Create an experiment
+### Creating an experiment
 
 First, we should create an A/B test experiment using the Google Optimize panel. Make a click to the `Create experiment` button.
 
@@ -34,7 +34,7 @@ Make sure you assign an objective to the experiment.
 
 Now, you can `start` the experiment.
 
-### Assign an activation event
+### Assigning an activation event
 
 Review the `Activation event` setting, because you can't use the experiment as a flag in the JavaScript code until that event is fired.
 
@@ -62,7 +62,7 @@ The `google_optimize` object will be available as a global variable at the `wind
 const variant = window.google_optimize.get('<experiment_id>');
 ```
 
-If the `get` function returns `undefined` means that the experiment is not available for this page, maybe this is misconfigured, or it doesn't apply for this page, or the experiment ID is not correct.
+If the `get` function returns `undefined` that means the experiment is not available for this page. Maybe it is misconfigured, or it doesn't apply for this page, or the experiment ID is not correct.
 
 ```javascript
 switch (value) {
@@ -102,7 +102,7 @@ We don't know when `google_optimize` will be available on the `window`, we shoul
 
 ### React integration
 
-Now we can preset a useful hook for React.
+Now we can preset a useful hook for React:
 
 ```javascript
 const useExperiment = (experimentId) => {
