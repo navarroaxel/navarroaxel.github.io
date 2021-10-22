@@ -97,7 +97,7 @@ const intervalId = setInterval(() => {
 }, 500);
 ```
 
-We don't know when `google_optimize` will be available on the `window`, we should use `setInterval` to read the variant when the experiment it's available.
+We don't know when `google_optimize` is going to be be available on the `window`, we should use `setInterval` to read the variant when the experiment it's available.
 
 
 ### React integration
