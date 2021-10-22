@@ -14,7 +14,7 @@ But I couldn't find a good guide about how to receive a `bool` flag in the front
 
 ### Creating an experiment
 
-First, we should create an A/B test experiment using the Google Optimize panel. Make a click to the `Create experiment` button.
+First, we should create an A/B test experiment using the Google Optimize panel. Make a click to the `Create experiment` button. 🧪
 
 ![The create experience button](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/cqz1sgaks59l9tg4g9xl.png)
 
@@ -32,7 +32,7 @@ Make sure you assign an objective to the experiment.
 
 ![The objectives of the given experiment](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/2r477svv7i9f24c16yy9.png)
 
-Now, you can `start` the experiment.
+Now, you can `start` the experiment. 🧫
 
 ### Assigning an activation event
 
@@ -134,3 +134,9 @@ const MyComponent = () => {
   );
 }
 ```
+
+## Conclusion
+
+Now, you know how to build experiments which send the name of the variant to the frontend, reading that value in our JavaScript code using the `Experiment ID` to apply the required conditionals to display the correct variant in our web sites.
+
+Additionally, we have a simple React hook to plug in to our React components and build our own _variant-verse_. 🦸
