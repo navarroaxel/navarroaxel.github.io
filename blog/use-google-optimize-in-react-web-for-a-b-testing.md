@@ -137,6 +137,6 @@ const MyComponent = () => {
 
 ## Conclusion
 
-Now, you know how to build experiments which send the name of the variant to the frontend, reading that value in our JavaScript code using the `Experiment ID` to apply the required conditionals to display the correct variant in our web sites.
+Now, you know how to build experiments that send the name of the variant to the frontend and how to read that value in our JavaScript code using the `Experiment ID` to apply the required conditionals to display the correct variant in our web sites.
 
 Additionally, we have a simple React hook to plug in to the React components and build your own _variant-verse_. 🦸
