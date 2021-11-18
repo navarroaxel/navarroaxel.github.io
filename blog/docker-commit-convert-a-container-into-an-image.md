@@ -22,7 +22,7 @@ $ docker run -p 8080:80 -it my_image
 
 Now we can access to the port `80` in the container using `http://localhost:8080` in the host OS.
 
-We can use `docker commit` to attach new volumes to the container too.
+`docker commit` can also be used to attach new volumes to the container.
 
 ## The size is important
 
