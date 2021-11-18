@@ -11,7 +11,7 @@ No, you can run commands with other users using the `Dockerfile` as well. You ca
 
 ## Adding a port forwarding rule to a container
 
-Perhaps we are testing a random software with a container and we need to publish a port to the host OS, or to another computer.
+It can occur that we are testing a random software within a container and we need to publish a port to the host OS, or to another computer.
 
 If that is the case, we can't add a forwarding port rule to an already existing container, so here is when `docker commit` comes to save us.
 
