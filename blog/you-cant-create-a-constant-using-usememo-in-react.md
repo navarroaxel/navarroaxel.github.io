@@ -56,3 +56,5 @@ const useConst = (initialValue) => {
 🥸 If you need a constant-like value based on some dependencies then `useMemo` is for you (but your code should still work without this hook).
 
 ✅ If you need a real constant over the lifecycle of a component, `useRef` is the solution that you need, and remember that some libraries like Chakra UI or Fluent UI provides a built-in `useConst` for this.
+
+![He-Man saying you shouldn't use the use state hook, and riding his motorcycle](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/7i8z6fhbdayy7bqqboph.png)
