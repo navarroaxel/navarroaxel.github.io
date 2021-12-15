@@ -2,7 +2,7 @@
 
 There are 3 possible options to create a constant in React: `useState`, `useMemo` and `useRef`. We're going to see which one is the best way to create real constants (not constant-like values).
 
-I talked about the [`useConst`](https://github.com/chakra-ui/chakra-ui/blob/main/packages/hooks/src/use-const.ts) hook from [chakra-ui](https://chakra-ui.com) in a [previous post](https://dev.to/cloudx/chakra-ui-the-hidden-treasures-1gl9), and I recently found the same hook in [Fluent UI](https://www.npmjs.com/package/@fluentui/react-hooks#useconst) so we are going to see why they've implemented it.
+I talked about the [`useConst`](https://github.com/chakra-ui/chakra-ui/blob/main/packages/hooks/src/use-const.ts) hook from [chakra-ui](https://chakra-ui.com/docs/hooks/use-const) in a [previous post](https://dev.to/cloudx/chakra-ui-the-hidden-treasures-1gl9), and I recently found the same hook in [Fluent UI](https://www.npmjs.com/package/@fluentui/react-hooks#useconst) so we are going to see why they've implemented it.
 
 ## Remember useMemo
 
