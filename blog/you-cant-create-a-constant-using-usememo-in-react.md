@@ -2,11 +2,11 @@
 
 There are 3 possible options to create a constant in React: `useState`, `useMemo` and `useRef`. We're going to see which one is the best way to create real constants (not constant-like values).
 
-I talked about the [`useConst`](https://github.com/chakra-ui/chakra-ui/blob/main/packages/hooks/src/use-const.ts) hook from [chakra-ui](https://chakra-ui.com) in a [previous post](https://dev.to/cloudx/chakra-ui-the-hidden-treasures-1gl9), and now, I found the same hook in [Fluent UI](https://www.npmjs.com/package/@fluentui/react-hooks#useconst), we are going to review why they've implemented it.
+I talked about the [`useConst`](https://github.com/chakra-ui/chakra-ui/blob/main/packages/hooks/src/use-const.ts) hook from [chakra-ui](https://chakra-ui.com) in a [previous post](https://dev.to/cloudx/chakra-ui-the-hidden-treasures-1gl9), and I recently found the same hook in [Fluent UI](https://www.npmjs.com/package/@fluentui/react-hooks#useconst) so we are going to see why they've implemented it.
 
 ## Remember useMemo
 
-The first thought that comes to mind when we look for a constant in a render function is to use the [`useMemo`](https://reactjs.org/docs/hooks-reference.html#usememo) hook. This is a good option, but only if your "constant" value shouldn't change based on the dependencies.
+The first thing I think of when I look for a constant in a render function is the use of [`useMemo`](https://reactjs.org/docs/hooks-reference.html#usememo) hook. This is a good option, but only if your "constant" value shouldn't change based on the dependencies.
 
 ```javascript
 const memoizedValue = useMemo(
@@ -15,7 +15,7 @@ const memoizedValue = useMemo(
 );
 ```
 
-There is no warranty that the returned value of `useMemo` is always the same even when the dependencies didn't change. React can run the factory function if the tool believes that the value should be re created.
+There is no guarantee that the returned value of `useMemo` is always the same even when the dependencies didn't change. For this reason React runs the factory function if the tool believes that the value should be re created.
 
 🧠 The official documentation says:
 
@@ -23,7 +23,7 @@ There is no warranty that the returned value of `useMemo` is always the same eve
 
 ## The useState option
 
-If a state didn't change, then it's a constant.
+If a state doesn't change, then it's a constant.
 
 ```javascript
 const [value] = useState(initialValue);
@@ -35,13 +35,13 @@ Yeah, we can create a constant with [`useState`](https://reactjs.org/docs/hooks-
 
 ## A useRef approach
 
-The [`useRef`](https://reactjs.org/docs/hooks-reference.html#useref) hook can hold a value, and doesn't have an internal reducer or checks on the dependencies array, also React doesn't re-create the value for performance reasons.
+The [`useRef`](https://reactjs.org/docs/hooks-reference.html#useref) hook can hold a value, and it neither has an internal reducer nor checks on the dependencies array. Also, React doesn't re-create the value for performance reasons.
 
 ```javascript
 const useConst = (initialValue) => {
   const ref = React.useRef();
   if (ref.current === undefined) {
-    ref.current = typeof initialValue === 'function' ? initialValue() : initialValue,
+    ref.current = typeof initialValue === 'function' ? initialValue() : initialValue;
   }
   return ref.current;
 }
@@ -53,6 +53,6 @@ const useConst = (initialValue) => {
 
 ❌ Don't use `useState` to create constants because it's expensive.
 
-🥸 If you need a constant-like value based on some dependencies `useMemo` is for you, but your code should still work without this hook.
+🥸 If you need a constant-like value based on some dependencies then `useMemo` is for you (but your code should still work without this hook).
 
-✅ If you need a real constant over the lifecycle of a component, `useRef` is the solution that you need, and some UI libraries like Chakra UI or Fluent UI provides a built-in `useConst` for this.
+✅ If you need a real constant over the lifecycle of a component, `useRef` is the solution that you need, and remember that some libraries like Chakra UI or Fluent UI provides a built-in `useConst` for this.
