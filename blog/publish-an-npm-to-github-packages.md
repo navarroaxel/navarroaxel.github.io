@@ -2,7 +2,7 @@
 
 Sometimes in website and backend projects we found common components (React, utils, validations, etc) and, if we follow the DRY concept, we should find a way to create a private package and install it in every project that needs it.
 
-We're going to review how to build and publish JavaScript packages using npm.
+We're going to review how to build and publish JavaScript packages using GitHub and npm.
 
 ## The GitHub solution
 
@@ -15,7 +15,7 @@ You should add the `publishConfig` section in the `package.json` file to publish
 ```json
 "publishConfig": {
   "registry": "https://npm.pkg.github.com"
-},
+}
 ```
 
 ### The workflow
@@ -60,7 +60,7 @@ echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
 
 🧠 Remember that your organization name, e.g. `lexacode`, should be in `kebab-case`, **no uppercase allowed**.
 
-Then, you should add the `GITHUB_TOKEN` as an environment variable before the `npm publish` command.
+Then, you should add the `GITHUB_TOKEN` as an environment variable for the `npm publish` command.
 
 ```yaml
 - run: npm publish
@@ -95,7 +95,7 @@ npm install @lexacode/package-example
 To use your package in GitHub actions you should use a code like the following:
 
 ```yaml
-lint:
+build:
   permissions:
       contents: read
       packages: read
