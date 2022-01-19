@@ -6,7 +6,7 @@ We're going to review how to build and publish JavaScript packages using npm.
 
 ## The GitHub solution
 
-GitHub provides the [GitHub Package Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry) to publish private npm packages. We can also use it for Docker images, and libraries for other languages like Ruby, but we're going to focus on the npm solution.
+GitHub provides the [GitHub Package Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry) to publish private npm packages. We can also use it for Docker images and libraries for other languages like Ruby, but we're going to focus on the npm solution.
 
 ### The publish configuration
 
@@ -51,14 +51,14 @@ jobs:
 
 The [`permissions`](https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions#permissions) modifies the default permissions granted to the `GITHUB_TOKEN`.
 
-The important script in this workflow is create a `.npmrc` file inside the `build/` directory before publish to the registry.
+This workflow creates a `.npmrc` file inside the `build/` directory before publishing the package to the registry.
 
 ```bash
 echo @lexacode:https://npm.pkg.github.com/ > build/.npmrc
 echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> build/.npmrc
 ```
 
-🧠 Remember that your organization name, e.g. `lexacode`, should be in `kebab-case`, **no mayus allowed**.
+🧠 Remember that your organization name, e.g. `lexacode`, should be in `kebab-case`, **no uppercase allowed**.
 
 Then, you should add the `GITHUB_TOKEN` as an environment variable before the `npm publish` command.
 
