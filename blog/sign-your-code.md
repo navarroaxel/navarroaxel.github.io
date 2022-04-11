@@ -1,6 +1,6 @@
 # Sign your code
 
-Do you know you can sign your code in Git using a GPG key? A lot of programmers doesn't know their can sign their Git commits using a signature created by themself.
+Did you know you can sign your code in Git using a GPG key? A lot of programmers don't know they can sign their Git commits using a signature created by themself.
 
 ## Introduction
 
@@ -16,11 +16,11 @@ You can create a GPG key following [this guide](https://docs.github.com/en/authe
 
 ## Should I sign every commit?
 
-There is a discussion about this, because Linus Torvalds says that when you're signing a Git tag 🏷️, you're validating all the commits in the release, signed or not. If you **automatically** sign every commit in the repository, the source of the signature lose its sense.
+There is a discussion about this, because Linus Torvalds says that when you're signing a Git tag 🏷️, you're validating all the commits in the release, signed or not. If you **automatically** sign every commit in the repository, the source of the signature loses its sense.
 
-In the other hand, some Linux distros, like Arch Linux, uses Arch User (Git) Repositories made by users to build non-official supported packages. I mean, if you're compiling and installing a package via another user's instructions maybe you like the idea that the authors sign their work. ⚠️
+In the other hand, some Linux distros, like Arch Linux, uses Arch User (Git) Repositories made by users to build non-official supported packages. I mean, if you're compiling and installing a package via another user's instructions maybe you like the idea of the authors signing their work. ⚠️
 
-I personally like the idea of sign my open source contributions, because that's a proof of my work. Anyway, if you use GitHub to [squash your commits](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-pull-request-commits) before merge a pull request, GitHub replaces all your commits, signed or not, by a commit made by itself and signed with the GitHub GPG key. The same happens when you create code releases via the GitHub web interface.
+I personally like the idea of signing my open source contributions, because that's a proof of my work. Anyway, if you use GitHub to [squash your commits](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-pull-request-commits) before merging a pull request, GitHub replaces all your commits, signed or not, by a commit made by itself and signed with the GitHub GPG key. The same happens when you create code releases via the GitHub web interface.
 
 
 ## How to sign a Git commit?
@@ -63,6 +63,6 @@ git config --global tag.gpgsign true
 
 ## Conclusion
 
-If you work in the open source world it's a really good practice signs your releases using a GPG key. If your work is consumed from a branch instead of a Git tag, perhaps you should sign every commit.
+If you work in the open source world it's a really good practice to sign your releases using a GPG key. If your work is consumed from a branch instead of a Git tag, perhaps you should sign every commit.
 
 And, if you work in a closed source repository, you can add a rule in your CI/CD tools to only allow releases with specific GPG keys.
