@@ -18,7 +18,7 @@ You can create a GPG key following [this guide](https://docs.github.com/en/authe
 
 There is a discussion about this, because Linus Torvalds says that when you're signing a Git tag 🏷️, you're validating all the commits in the release, signed or not. If you **automatically** sign every commit in the repository, the source of the signature loses its sense.
 
-![Signed tag by GitHub](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/nyc7rt70s4on8wgx68fn.png)
+![Signed tag by a Node.js' member on GitHub](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v4vhuivx1gicntp1khyq.png)
 
 On the other hand, some Linux distros, like Arch Linux, uses Arch User (Git) Repositories made by users to build non-official supported packages. I mean, if you're compiling and installing a package via another user's instructions maybe you like the idea of the authors signing their work. ⚠️
 
