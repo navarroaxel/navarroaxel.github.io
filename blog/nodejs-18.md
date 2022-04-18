@@ -69,3 +69,5 @@ Node.js v18 comes with V8 engine v10.1 which is part of Chromium v101, in spite 
 ## Conclusion
 
 In this post we've only mentioned the most important changes included in this release. Remember that this version will be promoted to LTS in October of this year.
+
+You can check the full changelog [here](https://github.com/nodejs/node/releases/tag/v18.0.0).
