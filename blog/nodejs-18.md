@@ -30,7 +30,7 @@ test('synchronous passing test', (t) => {
 });
 ```
 
-Also, we can group subtests in a parent test.
+Also, we can group subtests within a parent test.
 
 ```javascript
 test('top level test', async (t) => {
@@ -44,23 +44,23 @@ test('top level test', async (t) => {
 });
 ```
 
-Learn more in <https://nodejs.org/dist/latest-v18.x/docs/api/test.html>.
+Learn more at <https://nodejs.org/dist/latest-v18.x/docs/api/test.html>.
 
 ## Prefix-only core module
 
-Did you see that strange import?
+Have you seen this strange import?
 
 ```javascript
 import test from 'node:test';
 ```
 
-Since this version all core modules can be imported using the `node:` prefix, there is no difference between importing `fs` and `node:fs`. But the `test` module only can be imported using the prefixed form: `node:test`.
+Since this release all core modules can be imported using the `node:` prefix, there is no difference between importing `fs` and `node:fs`. But the `test` module only can be imported using the prefixed form: `node:test`.
 
-💡 If when you load `node:test` the `node:` prefix is not included, Node.js will attempt to load a module named `test` from the `node_modules` folder.
+💡 If when loading `node:test` the `node:` prefix is not included, Node.js will attempt to load a module named `test` from the `node_modules` folder.
 
 ## The V8 10.1
 
-Node.js v18 comes with V8 engine v10.1, which is part of Chromium 101. Compared to the version included in Node.js v17, the following new features are included:
+Node.js v18 comes with V8 engine v10.1 which is part of Chromium v101, in spite of the versions included in Node.js v17 that didn't include these features:
 
 * The [`findLast` and `findLastIndex` array methods](https://v8.dev/features/finding-in-arrays).
 * Improvements to the [`Intl.Locale` API](https://v8.dev/blog/v8-release-99#intl.locale-extensions).
@@ -68,4 +68,4 @@ Node.js v18 comes with V8 engine v10.1, which is part of Chromium 101. Compared 
 
 ## Conclusion
 
-There are more changes in this major release, we only review the most important ones. Remember that this version will be promoted to LTS in October of this year.
+In this post we've only mentioned the most important changes included in this release. Remember that this version will be promoted to LTS in October of this year.
