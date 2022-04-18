@@ -1,6 +1,6 @@
 # Node.js 18: new fetch and test runner APIs
 
-This week Node.js v18 was released and we can found a few amazing things in this major release. Let's check the most important ones. 🚀
+This week Node.js v18 was released and we can found a few amazing stuff in this major release. Let's check the most important ones. 🚀
 
 ## The fetch API
 
