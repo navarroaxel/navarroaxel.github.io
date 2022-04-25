@@ -1,0 +1,23 @@
+# Build a discoverable change password form
+
+We can use a well-known URL in our websites to make our change password forms discoverable by tools, like 1Password, LastPass, Bitwarden, etc.
+
+This magic URL for `https://example.com` would be `https://example.com/.well-known/change-password`, let's check how this works. 💪
+
+## A well-known URL
+
+What is a [well-known URI](https://ldapwiki.com/wiki/Well-Known%20URIs)? It's basically a group of predefined "links" inside a `/.well-known/` directory in a website.
+
+These links could be a HTTP redirect, like the change-password URI, or a document with a specific format, like the "well known" OpenID Connect configuration in JSON format located at `/.well-known/openid-configuration`. We can found an example here <https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration>.
+
+## Just a redirect
+
+The [specification](https://w3c.github.io/webappsec-change-password-url/) for Well-Known URLs for Change passwords are still in draft, but we can found examples in popular websites like [GitHub](https://github.com/.well-known/change-password), [Slack](https://slack.com/.well-known/change-password), or [Wikipedia](https://wikipedia.org/.well-known/change-password).
+
+💡 If you can't find the reset password link in a website, you can use this Well-Known URL.
+
+## Conclusion
+
+We can programmatically advertise where a user can change their password, improving the **security** and **usability** of a website which require authentication.
+
+Then create a semantic HTML form for change passwords and the password manager tool will make the rest.
