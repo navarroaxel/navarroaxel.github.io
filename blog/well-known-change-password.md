@@ -3,6 +3,7 @@
 We can use a well-known URL in our websites to make our _change password_ forms discoverable by tools, like 1Password, LastPass, Bitwarden, etc.
 
 For `https://example.com`, this magic URL would be `https://example.com/.well-known/change-password`.
+
 Let's check how this works. 💪
 
 ## A well-known URL
