@@ -1,14 +1,15 @@
 # Build a discoverable change password form
 
-We can use a well-known URL in our websites to make our change password forms discoverable by tools, like 1Password, LastPass, Bitwarden, etc.
+We can use a well-known URL in our websites to make our _change password_ forms discoverable by tools, like 1Password, LastPass, Bitwarden, etc.
 
-This magic URL for `https://example.com` would be `https://example.com/.well-known/change-password`, let's check how this works. 💪
+For `https://example.com`, this magic URL would be `https://example.com/.well-known/change-password`.
+Let's check how this works. 💪
 
 ## A well-known URL
 
 What is a [well-known URI](https://ldapwiki.com/wiki/Well-Known%20URIs)? It's basically a group of predefined "links" inside a `/.well-known/` directory in a website.
 
-These links could be a HTTP redirect, like the change-password URI, or a document with a specific format, like the "well known" OpenID Connect configuration in JSON format located at `/.well-known/openid-configuration`. We can found an example here <https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration>.
+These links can be either a HTTP redirect, like the change-password URI, or a document with a specific format, like the "well known" OpenID Connect configuration in JSON format located at `/.well-known/openid-configuration`. We can find an example here <https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration>.
 
 ## Just a redirect
 
@@ -18,6 +19,6 @@ The [specification](https://w3c.github.io/webappsec-change-password-url/) for We
 
 ## Conclusion
 
-We can programmatically advertise where a user can change their password, improving the **security** and **usability** of a website which require authentication.
+We can programmatically advertise where a user can change its password, improving the **security** and **usability** of a website that requires authentication.
 
-Then create a semantic HTML form for change passwords and the password manager tool will make the rest.
+Now you can create a semantic HTML form for change passwords and the password manager tool will make the rest.
