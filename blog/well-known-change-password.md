@@ -7,7 +7,7 @@ Let's check how this works. 💪
 
 ## A well-known URL
 
-What is a [well-known URI](https://ldapwiki.com/wiki/Well-Known%20URIs)? It's basically a group of predefined "links" inside a `/.well-known/` directory in a website.
+What is a [well-known URI](https://ldapwiki.com/wiki/Well-Known%20URIs)? It's basically a group of predefined "links" inside a `/.well-known/` directory of a website.
 
 These links can be either a HTTP redirect, like the change-password URI, or a document with a specific format, like the "well known" OpenID Connect configuration in JSON format located at `/.well-known/openid-configuration`. We can find an example here <https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration>.
 
