@@ -1,6 +1,6 @@
 # ugrep: an interactive grep for the terminal
 
-The ugrep tool is a faster, user-friendly and compatible grep replacement written in C++11. Let's check how to install ugrep and how to use the interactive query mode, fuzzy search, and other options.
+ugrep is a faster, user-friendly and compatible grep replacement tool written in C++11. Let's see how to install it and how to use the interactive query mode, fuzzy search, and other options.
 
 ## Installation
 
@@ -8,11 +8,11 @@ In Windows, you can just download the full-featured [ugrep.exe](https://github.c
 
 In MacOS, you could use `brew install ugrep`.
 
-Or, find your destiny here: <https://github.com/Genivia/ugrep#install>.
+In any case, you can find your destiny here: <https://github.com/Genivia/ugrep#install>.
 
 ## The basics
 
-The basic usage is start the interactive query mode and look for a specific text in recursively in sub-directories using plain-text or regex.
+The basic usage is initializing the interactive query mode and look for a specific text recursively in sub-directories using plain-text or regex.
 
 ```bash
 ugrep -Q
@@ -22,7 +22,7 @@ ugrep -Q
 
 💡 Tip: you can add the `--ignore-case` argument to make case-insensitive matches.
 
-If you want to see only the files that contains the search term you can use the following arguments:
+If you only want to see the files containing the search term you can use the following arguments:
 
 ```bash
 ugrep -Q --ignore-case --files-with-matches
@@ -32,7 +32,7 @@ ugrep -Q --ignore-case --files-with-matches
 
 ## The fuzzy search
 
-The [fuzzy search](https://en.wikipedia.org/wiki/Approximate_string_matching) is the technique of look for a text that match a pattern approximately, instead of exactly. We can look for a text within the specified [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance).
+The [fuzzy search](https://en.wikipedia.org/wiki/Approximate_string_matching) is a technique that looks for a text that matches a pattern approximately, instead of exactly. We can look for a text within the specified [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance).
 
 ```bash
 ugrep -Z3 android
@@ -40,7 +40,7 @@ ugrep -Z3 android
 
 💡 Tip: `-Z3` matches up to three extra, missing or replaced characters; `-Z+~3` allows up to three insertions (`+`) or substitutions (`~`), but no deletions (`-`).
 
-You can start a query mode with fuzzy search like the following:
+You can start a query mode with fuzzy search this way:
 
 ```bash
 ugrep -Q -Z3
@@ -48,13 +48,13 @@ ugrep -Q -Z3
 
 ## Interactive TUI
 
-Once you started the query mode, you can toggle fuzzy search, list only filenames, or more in options panel pressing `F1`.
+Once you have started the query mode, you can toggle fuzzy search, only list filenames or more options from the panel by pressing `F1`.
 
 ![ugrep help and options](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eesmpv9rne7mrgna2508.png)
 
 Press the upper case Z to toggle on/off the fuzzy search mode, and `[` to increase and `]` to decrease the fuzziness.
 
-Also, you can scroll the result of a search using the arrow keys or `^S`, then with `F2` you can open the editor for the file of the current matched text (nano, vim, etc).
+Also, you can scroll up and down the result of a search using the arrow keys or `^S`, and then use `F2` to open the editor for the file of the current matched text (nano, vim, etc).
 
 ## More ugrep
 
