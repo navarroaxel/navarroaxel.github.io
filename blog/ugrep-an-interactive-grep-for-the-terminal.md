@@ -58,6 +58,6 @@ Also, you can scroll up and down the result of a search using the arrow keys or 
 
 ## More ugrep
 
-You have a lot of possible customization options you could investigate in the [README](https://github.com/Genivia/ugrep#readme) or use [ugrep with Vim](https://github.com/Genivia/ugrep#vim).
+You have a lot of possible customization options you can be found in the [README](https://github.com/Genivia/ugrep#readme) file or even use [ugrep with Vim](https://github.com/Genivia/ugrep#vim).
 
 Thanks to [Dr. Robert van Engelen](https://github.com/genivia-inc) for this awesome tool! and if you 💛 it too, leave a ⭐ in <https://github.com/Genivia/ugrep>.
