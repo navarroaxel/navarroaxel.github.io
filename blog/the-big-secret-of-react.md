@@ -4,7 +4,7 @@ Have you thought about how React compares the `deps` array used by the hooks in 
 
 ## Introduction
 
-As a curious developer, I was wondering how React checks the array of dependencies, called `deps`, that I pass to the `useEffect`, `useCallback` and `useMemo` hooks. I didn't find the answer anywhere.
+As a curious developer, I was wondering how React checks the dependencies array -called `deps`- that is passed to the `useEffect`, `useCallback` and `useMemo` hooks. I didn't find the answer anywhere.
 
 ```javascript
 useEffect(() => {
