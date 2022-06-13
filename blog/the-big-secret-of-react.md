@@ -20,7 +20,7 @@ React doesn't use `==` or `===` operators, it uses the [`Object.is()`](https://d
 
 We all know the difference between Abstract Equality Comparison (`==`) and Strict Equality Comparison (`===`), but what comes with this new comparison?
 
-💡 You can quickly check the difference between these equality comparisons in [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#a_model_for_understanding_equality_comparisons).
+💡 You can quickly check the differences between these equality algorithms in [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#a_model_for_understanding_equality_comparisons).
 
 We can affirm that the differences between `===` and `Object.is` are:
 
