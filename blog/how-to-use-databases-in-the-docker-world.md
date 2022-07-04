@@ -1,6 +1,6 @@
 # How to use databases in the Docker world
 
-We can run DB engines locally on our machine without install them using Docker containers. We're going to check 
+We can run DB engines locally on our machine without installing them by using Docker containers.
 
 💡 Remember that the container's data is removed with the container itself, so, we're going to store the DB data into a specific Docker volume (`--volume`) to keep it in time.
 
@@ -15,7 +15,7 @@ docker run --detach --name mongo \
   mongo
 ```
 
-This starts a Docker container that runs the `mongod` process, and it listens the default MongoDB port `27017`. By default MongoDB uses the `test` database and only accepts connections from `localhost` without authentication.
+This starts a Docker container that runs the `mongod` process and listens the default MongoDB port `27017`. By default MongoDB uses the `test` database and only accepts connections from `localhost` without authentication.
 
 ### The Docker run command
 
@@ -26,11 +26,11 @@ Let's explain the `docker run` arguments:
 3. `--publish` forwards a specific port in `localhost` to the given container.
 4. `--volume` creates or reuse a volume and attach it to the given container in the specified path.
 
-By default MongoDB uses the `/data/db` directory to store the databases, remember to mount a Docker volume in that path.
+By default MongoDB uses the `/data/db` directory to store the databases (remember to mount a Docker volume in that path).
 
 ### A MongoDB root user
 
-You can specify a `root` user to the DB adding the following environment variables you the container
+You can specify a `root` user to the DB adding the following environment variables to your the container
 
 ```bash
 docker run --detach --name mongo \
@@ -45,7 +45,7 @@ For more variables check the `mongo` image page in [Docker hub](https://hub.dock
 
 ### Using the MongoDB shell
 
-You can connect via terminal using the `mongosh` command in the same container.
+You can connect to your DB via terminal by using the `mongosh` command in the same container.
 
 ```bash
 docker exec -it mongo mongosh
@@ -55,7 +55,7 @@ Use `--username` and `--password` if those values are required.
 
 ### How to update the engine
 
-We can update a DB instance easily if we previously stored the DB data in a Docker volume ‼️. This is import, otherwise we'll lose data.
+We can update a DB instance easily if we have previously stored the DB data in a Docker volume ‼️. This is important, otherwise we'll lose data.
 
 1. Pull the latest MongoDB image
 
@@ -79,7 +79,7 @@ We can update a DB instance easily if we previously stored the DB data in a Dock
       mongo
     ```
 
-It's done! your database is up to date. 🙌
+It's done! your database is now up to date. 🙌
 
 # PostgreSQL
 
@@ -99,13 +99,13 @@ For more variables check the [Docker Hub](https://hub.docker.com/_/postgres) pag
 
 ### Connecting via terminal
 
-You can connect via terminal using the same container instead of install the client on your machine, just use the correct username
+You can connect via terminal using the same container with the correct username instead of installing the client on your machine.
 
 ```bash
 docker exec -it pg psql --username=postgres
 ```
 
-The password is not required to connect from the same host.
+The password is not required to connections from the same host.
 
 ## MySQL
 
@@ -142,7 +142,7 @@ docker run --name mssql \
   mcr.microsoft.com/mssql/server
 ```
 
-Also, the SA password have stronger constraints than the other engines.
+Also, the SA password has stronger constraints than the other engines.
 
 ### SQL Server editions
 
